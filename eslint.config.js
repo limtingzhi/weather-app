@@ -25,6 +25,20 @@ export default [
     rules: {
       ...reactHooksPlugin.configs.recommended.rules,
       '@stylistic/semi': ['error', 'always'],
+      '@stylistic/member-delimiter-style': [
+        'error',
+        {
+          multiline: {
+            delimiter: 'semi',
+            requireLast: true,
+          },
+          singleline: {
+            delimiter: 'semi',
+            requireLast: true,
+          },
+          multilineDetection: 'brackets',
+        },
+      ],
       'import/order': [
         'error',
         {
