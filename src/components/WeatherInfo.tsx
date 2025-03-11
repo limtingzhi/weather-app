@@ -14,7 +14,7 @@ const WeatherInfo = (props: Props) => {
     return;
   }
 
-  const date = formatDate(weatherInfo.timestamp);
+  const date = formatDate(weatherInfo.timestamp * 1000);
 
   const weatherImage = weatherInfo.weather === 'Clear' ? sunImage : cloudImage;
 
