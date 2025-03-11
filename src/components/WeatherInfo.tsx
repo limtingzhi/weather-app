@@ -22,8 +22,8 @@ const WeatherInfo = (props: Props) => {
     <div>
       <img alt="weather" src={weatherImage} />
       <div>Today’s Weather</div>
-      <div>{`${weatherInfo.temp}°`}</div>
-      <div>{`H: ${weatherInfo.maxTemp}° L: ${weatherInfo.minTemp}°`}</div>
+      <div>{`${Math.round(weatherInfo.temp)}°`}</div>
+      <div>{`H: ${Math.round(weatherInfo.maxTemp)}° L: ${Math.round(weatherInfo.minTemp)}°`}</div>
       <div>{`${weatherInfo.city}, ${weatherInfo.country}`}</div>
       <div>{weatherInfo.weather}</div>
       <div>{`Humidity: ${weatherInfo.humidity}%`}</div>
