@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SearchHistory from '../components/SearchHistory';
 import SearchInput from '../components/SearchInput';
 import WeatherInfo from '../components/WeatherInfo';
 import { useHistory } from '../hooks/useHistory';
@@ -26,6 +27,13 @@ function App() {
         city={city}
         country={country}
         weatherInfo={weatherInfo}
+      />
+      <SearchHistory
+        deleteHistory={deleteHistory}
+        history={history}
+        searchWeatherInfo={searchWeatherInfo}
+        setCity={setCity}
+        setCountry={setCountry}
       />
     </>
   );
