@@ -4,13 +4,11 @@ import { WeatherInfoType } from '../typings/typings';
 import { formatDate } from '../utils/formats';
 
 interface Props {
-  city: string;
-  country: string;
   weatherInfo: WeatherInfoType | null;
 }
 
 const WeatherInfo = (props: Props) => {
-  const { city, country, weatherInfo } = props;
+  const { weatherInfo } = props;
 
   if (weatherInfo === null) {
     return;
@@ -26,7 +24,7 @@ const WeatherInfo = (props: Props) => {
       <div>Today’s Weather</div>
       <div>{`${weatherInfo.temp}°`}</div>
       <div>{`H: ${weatherInfo.maxTemp}° L: ${weatherInfo.minTemp}°`}</div>
-      <div>{`${city}, ${country}`}</div>
+      <div>{`${weatherInfo.city}, ${weatherInfo.country}`}</div>
       <div>{weatherInfo.weather}</div>
       <div>{`Humidity: ${weatherInfo.humidity}%`}</div>
       <div>{date}</div>

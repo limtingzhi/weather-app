@@ -24,8 +24,6 @@ function App() {
       />
       {errorMsg && <div>{errorMsg}</div>}
       <WeatherInfo
-        city={city}
-        country={country}
         weatherInfo={weatherInfo}
       />
       <SearchHistory

@@ -30,6 +30,8 @@ const useSearchWeatherInfo = (props: Props): UseSearchWeatherInfo => {
 
     // TODO: Call API
     const mockWeatherInfo = {
+      city: trimmedCity,
+      country: trimmedCountry,
       humidity: 60,
       maxTemp: 29,
       minTemp: 26,
