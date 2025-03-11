@@ -1,6 +1,7 @@
 import cloudImage from '../assets/cloud.png';
 import sunImage from '../assets/cloud.png';
 import { WeatherInfoType } from '../typings/typings';
+import { formatDate } from '../utils/formats';
 
 interface Props {
   city: string;
@@ -15,9 +16,7 @@ const WeatherInfo = (props: Props) => {
     return;
   }
 
-  const date = new Date(weatherInfo.timestamp);
-  const formattedDate = date.toLocaleDateString('en-SG').replace(/\//g, '-');
-  const formattedTime = date.toLocaleTimeString('en-SG', { hour: '2-digit', minute: '2-digit' });
+  const date = formatDate(weatherInfo.timestamp);
 
   const weatherImage = weatherInfo.weather === 'Clear' ? sunImage : cloudImage;
 
@@ -30,7 +29,7 @@ const WeatherInfo = (props: Props) => {
       <div>{`${city}, ${country}`}</div>
       <div>{weatherInfo.weather}</div>
       <div>{`Humidity: ${weatherInfo.humidity}%`}</div>
-      <div>{`${formattedDate} ${formattedTime}`}</div>
+      <div>{date}</div>
     </div>
   );
 };
