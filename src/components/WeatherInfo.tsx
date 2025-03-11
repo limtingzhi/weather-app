@@ -1,3 +1,5 @@
+import cloudImage from '../assets/cloud.png';
+import sunImage from '../assets/cloud.png';
 import { WeatherInfoType } from '../typings/typings';
 
 interface Props {
@@ -17,8 +19,11 @@ const WeatherInfo = (props: Props) => {
   const formattedDate = date.toLocaleDateString('en-SG').replace(/\//g, '-');
   const formattedTime = date.toLocaleTimeString('en-SG', { hour: '2-digit', minute: '2-digit' });
 
+  const weatherImage = weatherInfo.weather === 'Clear' ? sunImage : cloudImage;
+
   return (
     <div>
+      <img alt="weather" src={weatherImage} />
       <div>Today’s Weather</div>
       <div>{`${weatherInfo.temp}°`}</div>
       <div>{`H: ${weatherInfo.maxTemp}° L: ${weatherInfo.minTemp}°`}</div>
