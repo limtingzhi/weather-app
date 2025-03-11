@@ -5,10 +5,16 @@ import './App.css';
 function App() {
   const [city, setCity] = useState<string>('');
   const [country, setCountry] = useState<string>('');
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const searchWeatherInfo = useCallback(async () => {
+    if (city.trim() === '' || country.trim() === '') {
+      setErrorMsg('Please enter both a city and a country.');
+      return;
+    }
+
     // TODO: Call API
-  }, []);
+  }, [city, country]);
 
   return (
     <>
@@ -19,6 +25,7 @@ function App() {
         setCountry={setCountry}
         searchWeatherInfo={searchWeatherInfo}
       />
+      {errorMsg && <div>{errorMsg}</div>}
       <div>Today’s Weather</div>
     </>
   );
