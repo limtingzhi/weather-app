@@ -24,6 +24,7 @@ export default [
     },
     rules: {
       ...reactHooksPlugin.configs.recommended.rules,
+      '@stylistic/brace-style': ['error', '1tbs'],
       '@stylistic/semi': ['error', 'always'],
       '@stylistic/member-delimiter-style': [
         'error',

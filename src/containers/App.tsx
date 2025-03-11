@@ -11,7 +11,9 @@ function App() {
   const [country, setCountry] = useState<string>('');
 
   const { history, updateHistory, deleteHistory } = useHistory();
-  const { errorMsg, weatherInfo, searchWeatherInfo } = useSearchWeatherInfo({ updateHistory });
+  const {
+    isLoading, errorMsg, weatherInfo, searchWeatherInfo,
+  } = useSearchWeatherInfo({ updateHistory });
 
   return (
     <>
@@ -22,10 +24,9 @@ function App() {
         setCountry={setCountry}
         searchWeatherInfo={searchWeatherInfo}
       />
+      {isLoading && <div>Loading...</div>}
       {errorMsg && <div>{errorMsg}</div>}
-      <WeatherInfo
-        weatherInfo={weatherInfo}
-      />
+      <WeatherInfo weatherInfo={weatherInfo} />
       <SearchHistory
         deleteHistory={deleteHistory}
         history={history}
