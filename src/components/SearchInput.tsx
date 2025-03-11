@@ -5,11 +5,15 @@ interface Props {
   country: string;
   setCity: (city: string) => void;
   setCountry: (country: string) => void;
-  searchWeatherInfo: () => void;
+  searchWeatherInfo: (city: string, country: string) => void;
 }
 
 const SearchInput = (props: Props) => {
   const { city, country, setCity, setCountry, searchWeatherInfo } = props;
+
+  const submit = useCallback(() => {
+    searchWeatherInfo(city, country);
+  }, [city, country, searchWeatherInfo]);
 
   const clearInputs = useCallback(() => {
     setCity('');
@@ -34,7 +38,7 @@ const SearchInput = (props: Props) => {
         type="text"
         value={country}
       />
-      <button onClick={searchWeatherInfo} type="submit">
+      <button onClick={submit} type="submit">
         Search
       </button>
       <button onClick={clearInputs} type="reset">
