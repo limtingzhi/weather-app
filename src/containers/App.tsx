@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import SearchInput from '../components/SearchInput';
-import { SearchHistoryItem } from '../typings/typings';
+import WeatherInfo from '../components/WeatherInfo';
+import { SearchHistoryItem, WeatherInfoType } from '../typings/typings';
 import './App.css';
 
 const MAX_HISTORY = 10;
@@ -9,6 +10,7 @@ function App() {
   const [city, setCity] = useState<string>('');
   const [country, setCountry] = useState<string>('');
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [weatherInfo, setWeatherInfo] = useState<WeatherInfoType | null>(null);
   const [history, setHistory] = useState<SearchHistoryItem[]>([]);
 
   const updateHistory = useCallback(() => {
@@ -38,6 +40,16 @@ function App() {
     updateHistory();
 
     // TODO: Call API
+    const mockWeatherInfo = {
+      humidity: 60,
+      maxTemp: 29,
+      minTemp: 26,
+      temp: 26,
+      timestamp: 1726660758,
+      weather: 'Rain',
+    };
+
+    setWeatherInfo(mockWeatherInfo);
   }, [city, country, updateHistory]);
 
   return (
@@ -50,7 +62,11 @@ function App() {
         searchWeatherInfo={searchWeatherInfo}
       />
       {errorMsg && <div>{errorMsg}</div>}
-      <div>Today’s Weather</div>
+      <WeatherInfo
+        city={city}
+        country={country}
+        weatherInfo={weatherInfo}
+      />
     </>
   );
 }
