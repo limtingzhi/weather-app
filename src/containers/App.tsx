@@ -30,7 +30,7 @@ function App() {
       {errorMsg && (
         <div className="weather-app__error-msg">{errorMsg}</div>
       )}
-      {(weatherInfo !== null || history.length !== 0) && (
+      {!isLoading && (weatherInfo !== null || history.length !== 0) && (
         <div className="weather-app__results">
           <WeatherInfo weatherInfo={weatherInfo} />
           <SearchHistory
