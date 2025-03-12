@@ -61,8 +61,8 @@ const useSearchWeatherInfo = (props: Props): UseSearchWeatherInfo => {
       }
 
       setWeatherInfo({
-        city: trimmedCity,
-        country: trimmedCountry,
+        city: coordinates[0].name,
+        country: coordinates[0].country,
         humidity: weatherData.main.humidity,
         maxTemp: weatherData.main.temp_max,
         minTemp: weatherData.main.temp_min,
