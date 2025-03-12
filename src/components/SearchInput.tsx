@@ -32,7 +32,7 @@ const SearchInput = (props: Props) => {
             className="search-input__input"
             id="city"
             onChange={e => setCity(e.target.value)}
-            placeholder=""
+            placeholder=" "
             type="text"
             value={city}
           />
@@ -49,7 +49,7 @@ const SearchInput = (props: Props) => {
             className="search-input__input"
             id="country"
             onChange={e => setCountry(e.target.value)}
-            placeholder=""
+            placeholder=" "
             type="text"
             value={country}
           />
