@@ -28,8 +28,7 @@ body {
   --color-accent: #6C40B5;
   --color-white: #fff;
 
-  background-image: url('../assets/bg-light.png');
-  background-color: rgba(255, 255, 255, 0.3);
+  background: radial-gradient(ellipse at 28% 79%, #C196DD 0%, #8D71D0 100%), url('../assets/bg-light.png');
   background-blend-mode: soft-light;
   background-position: center;
   background-size: cover;
