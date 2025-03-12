@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --breakpoints-sm: 768px;
+  --breakpoints-md: 992px;
+  --breakpoints-lg: 1200px;
+
+  --fontsize-smaller: 10px;
+  --fontsize-small: 13px;
+  --fontsize-regular: 16px;
+  --fontsize-large: 18px;
+  --fontsize-larger: 21px;
+
+  --size-smaller: 6px;
+  --size-small: 12px;
+  --size-base: 18px;
+  --size-large: 32px;
+  --size-larger: 48px;
+  --size-radius: 8px;
+
+  --color-bg: #fff;
+  --color-primary: #181818;
+  --color-secondary: #666;
+  --color-accent: #6C40B5;
+  --color-white: #fff;
+
+  background-image: url('../assets/bg-light.png');
+  background-color: rgba(255, 255, 255, 0.3);
+  background-blend-mode: soft-light;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-primary);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  word-break: break-word;
+  word-wrap: break-word;
+}
