@@ -41,3 +41,27 @@
   text-align: right;
 }
 
+@media (min-width: 768px) {
+  .weather-info {
+    margin-bottom: var(--size-large);
+    font-size: var(--fontsize-regular);
+  }
+
+  .weather-info__img {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    right: 0;
+  }
+
+  .weather-info__temp {
+    font-size: var(--size-largest);
+  }
+
+  .weather-info__right {
+    flex-direction: row-reverse;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: var(--size-small);
+  }
+}

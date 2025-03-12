@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 700px;
+  margin: 0 auto;
   padding: var(--size-base) var(--size-base) 0 var(--size-base);
 }
 
@@ -32,4 +34,23 @@
   border-top-right-radius: var(--size-radius-large);
   margin-top: 120px;
   padding: var(--size-base) var(--size-base) 0 var(--size-base);
+}
+
+@media (min-width: 768px) {
+  .weather-app__loading-msg {
+    font-size: var(--fontsize-base);
+    padding: var(--size-base);
+  }
+
+  .weather-app__error-msg {
+    font-size: var(--fontsize-base);
+    padding: var(--size-base);
+    border-radius: var(--size-radius-large);
+  }
+
+  .weather-app__results {
+    border-top-left-radius: var(--size-radius-larger);
+    border-top-right-radius: var(--size-radius-larger);
+    padding: var(--size-larger) var(--size-larger) 0 var(--size-larger);
+  }
 }
