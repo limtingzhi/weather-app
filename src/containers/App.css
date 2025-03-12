@@ -1,0 +1,14 @@
+.loading-msg {
+  font-size: var(--fontsize-small);
+  margin: var(--size-base) 0;
+  padding: var(--size-small);
+}
+
+.error-msg {
+  background-color: #f8d7da;
+  color: #e10000;
+  font-size: var(--fontsize-small);
+  margin: var(--size-base) 0;
+  padding: var(--size-small);
+  border-radius: var(--size-radius);
+}

@@ -24,8 +24,8 @@ function App() {
         setCountry={setCountry}
         searchWeatherInfo={searchWeatherInfo}
       />
-      {isLoading && <div>Loading...</div>}
-      {errorMsg && <div>{errorMsg}</div>}
+      {isLoading && <div className="loading-msg">Loading...</div>}
+      {errorMsg && <div className="error-msg">{errorMsg}</div>}
       <WeatherInfo weatherInfo={weatherInfo} />
       <SearchHistory
         deleteHistory={deleteHistory}
