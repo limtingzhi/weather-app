@@ -1,4 +1,5 @@
 .weather-info {
+  position: relative;
   display: flex;
   align-items: end;
   justify-content: space-between;
@@ -11,8 +12,8 @@
   position: absolute;
   width: 150px;
   height: 150px;
-  top: -75px;
-  right: 0;
+  top: -90px;
+  right: -18px;
 }
 
 .weather-info__left {
@@ -50,8 +51,8 @@
   .weather-info__img {
     width: 300px;
     height: 300px;
-    top: -100px;
-    right: 0;
+    top: -150px;
+    right: -48px;
   }
 
   .weather-info__temp {
