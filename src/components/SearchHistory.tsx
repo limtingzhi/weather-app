@@ -1,6 +1,9 @@
 import { useCallback } from 'react';
 import { SearchHistoryItem } from '../typings/typings';
 import { formatDate } from '../utils/formats';
+import SearchIcon from './Icons/SearchIcon';
+import TrashIcon from './Icons/TrashIcon';
+import './SearchHistory.css';
 
 interface Props {
   deleteHistory: (timestamp: number) => void;
@@ -24,26 +27,28 @@ const SearchHistory = (props: Props) => {
   }
 
   return (
-    <div>
-      <div>Search History</div>
+    <div className="search-history">
+      <div className="search-history__title">Search History</div>
       {history.map(h => (
-        <div key={h.timestamp}>
-          <div>
-            <div>{`${h.city}, ${h.country}`}</div>
-            <div>{formatDate(h.timestamp)}</div>
+        <div key={h.timestamp} className="search-history__item">
+          <div className="search-history__info">
+            <div className="search-history__info-location">{`${h.city}, ${h.country}`}</div>
+            <div className="search-history__info-date">{formatDate(h.timestamp)}</div>
           </div>
-          <div>
+          <div className="search-history__btns">
             <button
+              className="search-history__btn"
               onClick={() => retrySearchWeatherInfo(h.city, h.country)}
               type="button"
             >
-              Search
+              <SearchIcon className="search-history__btn-icon" />
             </button>
             <button
+              className="search-history__btn"
               onClick={() => deleteHistory(h.timestamp)}
               type="button"
             >
-              Delete
+              <TrashIcon className="search-history__btn-icon" />
             </button>
           </div>
         </div>

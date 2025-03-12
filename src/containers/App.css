@@ -21,6 +21,8 @@
 }
 
 .weather-app__results {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
@@ -29,5 +31,5 @@
   border-top-left-radius: var(--size-radius-large);
   border-top-right-radius: var(--size-radius-large);
   margin-top: 120px;
-  padding: var(--size-base);
+  padding: var(--size-base) var(--size-base) 0 var(--size-base);
 }
