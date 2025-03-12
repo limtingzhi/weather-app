@@ -1,14 +1,33 @@
-.loading-msg {
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--size-base) var(--size-base) 0 var(--size-base);
+}
+
+.weather-app__loading-msg {
   font-size: var(--fontsize-small);
   margin: var(--size-base) 0;
   padding: var(--size-small);
 }
 
-.error-msg {
+.weather-app__error-msg {
   background-color: #f8d7da;
   color: #e10000;
   font-size: var(--fontsize-small);
   margin: var(--size-base) 0;
   padding: var(--size-small);
-  border-radius: var(--size-radius);
+  border-radius: var(--size-radius-base);
+}
+
+.weather-app__results {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: none;
+  border-top-left-radius: var(--size-radius-large);
+  border-top-right-radius: var(--size-radius-large);
+  margin-top: 120px;
+  padding: var(--size-base);
 }

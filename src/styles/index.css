@@ -20,7 +20,9 @@ body {
   --size-base: 18px;
   --size-large: 32px;
   --size-larger: 48px;
-  --size-radius: 8px;
+
+  --size-radius-base: 8px;
+  --size-radius-large: 20px;
 
   --color-bg: #fff;
   --color-primary: #181818;
@@ -40,4 +42,5 @@ body {
   overflow-x: hidden;
   word-break: break-word;
   word-wrap: break-word;
+  margin: 0;
 }

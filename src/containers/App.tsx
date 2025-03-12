@@ -16,7 +16,7 @@ function App() {
   } = useSearchWeatherInfo({ updateHistory });
 
   return (
-    <>
+    <div className="weather-app">
       <SearchInput
         city={city}
         country={country}
@@ -24,17 +24,25 @@ function App() {
         setCountry={setCountry}
         searchWeatherInfo={searchWeatherInfo}
       />
-      {isLoading && <div className="loading-msg">Loading...</div>}
-      {errorMsg && <div className="error-msg">{errorMsg}</div>}
-      <WeatherInfo weatherInfo={weatherInfo} />
-      <SearchHistory
-        deleteHistory={deleteHistory}
-        history={history}
-        searchWeatherInfo={searchWeatherInfo}
-        setCity={setCity}
-        setCountry={setCountry}
-      />
-    </>
+      {isLoading && (
+        <div className="weather-app__loading-msg">Loading...</div>
+      )}
+      {errorMsg && (
+        <div className="weather-app__error-msg">{errorMsg}</div>
+      )}
+      {(weatherInfo !== null || history.length !== 0) && (
+        <div className="weather-app__results">
+          <WeatherInfo weatherInfo={weatherInfo} />
+          <SearchHistory
+            deleteHistory={deleteHistory}
+            history={history}
+            searchWeatherInfo={searchWeatherInfo}
+            setCity={setCity}
+            setCountry={setCountry}
+          />
+        </div>
+      )}
+    </div>
   );
 }
 

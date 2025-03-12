@@ -34,7 +34,7 @@
   width: 100%;
   flex-grow: 1;
   border: none;
-  border-radius: var(--size-radius);
+  border-radius: var(--size-radius-base);
 
   &:focus {
     outline: none;
@@ -65,7 +65,7 @@
   justify-content: center;
   background: var(--color-accent);
   border: none;
-  border-radius: var(--size-radius);
+  border-radius: var(--size-radius-base);
   cursor: pointer;
 
   &:hover {
